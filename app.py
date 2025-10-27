@@ -67,5 +67,3 @@ if st.button("Predict"):
         "to ensure a safe and smooth delivery process."
             )
     st.write(advice)
-
-    st.image("shap_force_plot.png")
