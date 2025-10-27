@@ -1,7 +1,8 @@
-streamlit
-joblib
+python_version = "3.12.7"
+streamlit==1.37.1
+joblib==1.4.2
 numpy==1.26.4
-pandas
-matplotlib
-shap==0.42.1
-xgboost==1.6.1
+pandas==2.2.2
+matplotlib==3.9.2
+shap==0.46.0
+xgboost==2.1.1
