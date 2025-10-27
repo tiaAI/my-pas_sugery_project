@@ -3,5 +3,4 @@ streamlit
 numpy
 pandas
 matplotlib
-shap
 xgboost
