@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import xgboost
 # Load the model
 model = joblib.load('xgb_model.pkl')
+model.get_booster().save_model('xgb_model.json') 
 
 # Define feature names
 feature_names = [
