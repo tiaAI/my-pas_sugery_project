@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import xgboost
 # Load the model
 model = joblib.load('xgb_model.pkl')
-model.attr('base_score', 0.5) 
+model.set_params(base_score=0.5)  
 
 # Define feature names
 feature_names = [
