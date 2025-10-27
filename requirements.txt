@@ -1,7 +1,7 @@
-joblib
 streamlit
-numpy
+joblib
+numpy==1.26.4
 pandas
 matplotlib
-shap==0.40.0
+shap==0.42.1
 xgboost
