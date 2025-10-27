@@ -69,10 +69,15 @@ if st.button("Predict"):
     st.write(advice)
 
     # Calculate SHAP values and display force plot
-    explainer = shap.TreeExplainer(model, base_score=0.5)
-    shap_values = explainer.shap_values(pd.DataFrame(features, columns=feature_names))
+    def model_predict(X):
+        return model.predict_proba(X)[:, 1]  # 返回正类的概率
 
-    shap.force_plot(explainer.expected_value, shap_values[0], 
+    # 初始化解释器（使用模型预测函数，而非模型本身）
+    explainer = shap.Explainer(model_predict, pd.DataFrame(features, columns=feature_names))
+    shap_values = explainer(pd.DataFrame(features, columns=feature_names))
+
+    # 生成SHAP force plot（注意参数调整）
+    shap.force_plot(explainer.expected_value, shap_values.values[0], 
                    pd.DataFrame(features, columns=feature_names), matplotlib=True)
     plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=1200)
     st.image("shap_force_plot.png")
