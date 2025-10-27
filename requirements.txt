@@ -3,5 +3,5 @@ streamlit
 numpy
 pandas
 matplotlib
-shap
+shap==0.40.0
 xgboost
