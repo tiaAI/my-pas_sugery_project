@@ -4,4 +4,4 @@ numpy==1.26.4
 pandas
 matplotlib
 shap==0.42.1
-xgboost
+xgboost==1.6.1
