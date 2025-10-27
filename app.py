@@ -68,3 +68,4 @@ if st.button("Predict"):
             )
     st.write(advice)
 
+    st.image("shap_force_plot.png")
