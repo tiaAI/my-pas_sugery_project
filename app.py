@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 import xgboost
 # Load the model
 model = joblib.load('xgb_model.pkl')
-model.set_params(base_score=0.5)  
 
 # Define feature names
 feature_names = [
@@ -70,7 +69,7 @@ if st.button("Predict"):
     st.write(advice)
 
     # Calculate SHAP values and display force plot
-    explainer = shap.Explainer(model) 
+    explainer = shap.TreeExplainer(model, base_score=0.5)
     shap_values = explainer.shap_values(pd.DataFrame(features, columns=feature_names))
 
     shap.force_plot(explainer.expected_value, shap_values[0], 
